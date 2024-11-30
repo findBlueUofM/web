@@ -7,8 +7,8 @@
     color: white;
     border: none;
     border-radius: 20px; /* Rounded corners */
-    width: 40px; /* Set a fixed width */
-    height: 40px; /* Set a fixed height */
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
     display: flex; /* Center the icon */
     justify-content: center; /* Center the icon horizontally */
     align-items: center; /* Center the icon vertically */

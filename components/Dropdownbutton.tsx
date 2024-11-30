@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginIcon from '@mui/icons-material/Login';
 import './DropdownButton.css'; // Import the CSS for styling
+import MenuIcon from '@mui/icons-material/Menu';
 const DropdownButton: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const toggleDropdown = () => {
@@ -17,7 +18,7 @@ const DropdownButton: React.FC = () => {
         aria-haspopup="true"
         aria-expanded={isDropdownOpen}
       >
-        ☰ {/* Hamburger icon */}
+        <MenuIcon/>
       </button>
       {isDropdownOpen && (
         <div className="dropdown-menu" onMouseLeave={closeDropdown}>
