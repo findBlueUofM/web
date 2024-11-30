@@ -1,6 +1,7 @@
-'use client';
+"use client"
 import { useRouter } from "next/navigation";
 import Navbar from '../../components/Navbar';
+import ProjectCardList from "@/components/ProjectCardList";
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,7 +18,7 @@ export default function About() {
   return (
     <div className={styles.container}>
       <Navbar />
-      projects
+      <ProjectCardList/>
       <Footer />
     </div>
   )}
