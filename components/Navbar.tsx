@@ -7,14 +7,14 @@ const Navbar: React.FC = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <Link href="/" className="logo">
-          <img id="logo" src="/michigan.png" alt="Michigan Logo" />
+          <img id="logo" src="michtransparent.png" alt="Michigan Logo" />
         </Link>
         <ul className="nav-links">
           <li><Link href="/about">About</Link></li>
           <li><Link href="/projects">Projects</Link></li>
           <li><Link href="/contact">Contact</Link></li>
           <li>
-            <DropdownButton /> {/* Use the DropdownButton component here */}
+            <DropdownButton />
           </li>
         </ul>
       </nav>

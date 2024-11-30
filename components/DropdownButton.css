@@ -4,7 +4,6 @@
     position: relative; /* Allows dropdown to position absolutely */
 }
 .dropdown-button {
-    background-color: #2196F3;
     color: white;
     border: none;
     border-radius: 20px; /* Rounded corners */
@@ -15,9 +14,6 @@
     align-items: center; /* Center the icon vertically */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s; /* Smooth color transition */
-}
-.dropdown-button:hover {
-    background-color: #1565C0;
 }
 /* Dropdown Menu Styles */
 .dropdown-menu {
@@ -38,7 +34,8 @@
     color: #333; /* Text color */
     text-align: center;
     position: relative; /* For pseudo-element positioning */
-    font-family: 'Poppins', serif;
+    font-family: 'Inter', 'Poppins', serif;
+    font-weight: 700;
 }
 
 

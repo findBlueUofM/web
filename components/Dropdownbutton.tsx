@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LoginIcon from '@mui/icons-material/Login';
 import './DropdownButton.css'; // Import the CSS for styling
 const DropdownButton: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
@@ -20,8 +21,7 @@ const DropdownButton: React.FC = () => {
       </button>
       {isDropdownOpen && (
         <div className="dropdown-menu" onMouseLeave={closeDropdown}>
-          <a href="/login" onClick={closeDropdown}>Login</a>
-          <a href="/signup" onClick={closeDropdown}>Sign Up</a>
+          <a href="/login" onClick={closeDropdown}>Login <LoginIcon /> </a>
         </div>
       )}
     </div>

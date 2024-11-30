@@ -4,18 +4,29 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ImageButton from '../components/ImageButton';
 import Link from 'next/link';
+import { Card, CardContent, CardMedia, Typography, Box, Button } from "@mui/material";
+import WorkIcon from "@mui/icons-material/Work";
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import PeopleIcon from '@mui/icons-material/People';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import GradientCover from "@/components/MainShowcase";
+import NetworkBuildRepeatSection from "@/components/MainShowcase";
+
 export default function Home() {
   const router = useRouter();
   const handleClick = () => {
-  router.push('/contact')
+  router.push('/login')
 }
   return (
     <div>
       <Navbar />
       {/* First Section: Large Image + title */}
       <div id="title">
-        <h1> FindBlue</h1>
-      </div>
+  <div className="title-content">
+    <h1 id="title-main">FindBlue</h1>
+    <h3 id="title-quote">Connect. Build. Showcase.</h3>
+  </div>
+</div>
       {/* Second Section: Quote Section */}
       <section className="quote-section">
         <blockquote>Made for students, by students, FindBlue is the go-to space for students at the University of Michigan
@@ -26,34 +37,11 @@ export default function Home() {
       <section className="image-buttons-section">
       {/* Centered title above the image buttons */}
         <div className="section-title">
-          <h2>Some success stories...</h2>
+          <h2>Network, build, repeat.
+            <PeopleIcon className="people-icon"/>
+          </h2>
         </div>
-        <div className="image-buttons-container">
-          <ImageButton
-            imageSrc="careerfairedited.jpg"
-            altText="Button 1 Image"
-            label={<><span className="bold-line">Connor's burger bar</span><br/><span className="normal-line">he makes burgers</span></>}
-            link="link1.html"
-          />
-          <ImageButton
-            imageSrc="careerfairedited.jpg"
-            altText="Button 2 Image"
-            label={<><span className="bold-line">David's microchip company</span><br/><span className="normal-line">they make microchips</span></>}
-            link="link2.html"
-          />
-          <ImageButton
-            imageSrc="careerfairedited.jpg"
-            altText="Button 3 Image"
-            label={<><span className="bold-line">Sam's Soup</span><br/><span className="normal-line">they make advanced rocket tech</span></>}
-            link="link3.html"
-          />
-          <ImageButton
-            imageSrc="careerfairedited.jpg"
-            altText="Button 4 Image"
-            label={<><span className="bold-line">Pravesh</span><br/><span className="normal-line">Pravesh</span></>}
-            link="link4.html"
-          />
-        </div>
+          <NetworkBuildRepeatSection />
       </section>
       {/* Fourth Section: Create your profile */}
       <section className="profile-section">

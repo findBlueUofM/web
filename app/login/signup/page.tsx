@@ -7,20 +7,13 @@ import {
   Typography,
   Button,
   Paper,
-  IconButton,
 } from "@mui/material";
-import LoginIcon from "@mui/icons-material/Login"; // Example icon, can be changed
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useRouter } from "next/navigation";
 
-const LoginPage: React.FC = () => {
-  const router = useRouter();
-  const handleClick = () => {
-    router.push('/login/signup');
-  }
+const SignupPage: React.FC = () => {
   return (
-    <div className="login-parent">
+    <div className="Signup-parent">
       <Navbar />
     <Box
       display="grid"
@@ -37,7 +30,7 @@ const LoginPage: React.FC = () => {
           alignItems: "center",
           p: 4,
           color: "white",
-          backgroundImage: `url(careerfairedited.jpg)`,
+          backgroundImage: `url(../leaves.jpeg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -63,16 +56,17 @@ const LoginPage: React.FC = () => {
             textAlign: "center",
           }}
         >
-          <Typography variant="h3" gutterBottom sx={{fontFamily: 'Inter', fontWeight: 750}}>
+          <Typography variant="h3" gutterBottom>
             Welcome Back!
           </Typography>
-          <Typography variant="body1" sx={{ maxWidth: 400, fontFamily: 'Inter', fontWeight: 500}}>
-            Why wait? Opportunities and networks are waiting for you at the door! Log in now to continue.
+          <Typography variant="body1" sx={{ maxWidth: 400 }}>
+            Discover the best tools for your tasks and stay connected with your
+            team. Log in to continue your journey!
           </Typography>
         </Box>
       </Box>
 
-      {/* Right Side: Login Form */}
+      {/* Right Side: Signup Form */}
       <Paper
         elevation={6}
         sx={{
@@ -84,7 +78,7 @@ const LoginPage: React.FC = () => {
         }}
       >
         <Typography component="h1" variant="h5">
-          Login
+          Sign up
         </Typography>
 
         <Box
@@ -116,21 +110,22 @@ const LoginPage: React.FC = () => {
             id="password"
             autoComplete="current-password"
           />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="fullname"
+            label="Full Name"
+            type="text"
+            id="text"
+          />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
-          </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-            onClick={handleClick}
-          >
-            Don't have an account? Sign Up!
+            Sign Up
           </Button>
         </Box>
       </Paper>
@@ -140,4 +135,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;

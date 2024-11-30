@@ -17,26 +17,56 @@
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   background-color: white;
   color: black;
 }
 /* First Section: Large Image + title */
 #title {
-  position: relative; /* Ensures the pseudo-element is positioned correctly */
-  background-image: url("/careerfairedited.jpg");
-  height: 100vh;
+  position: relative;
+  background-image: url("/leaves.jpeg");
+  height: 95vh;
   width: 100%;
-  font-size: 200px;
-  display: flex;                  /* Use flexbox to align items */
-  justify-content: center;        /* Center the items horizontally */
-  align-items: center;            /* Center items vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
+  font-weight: 800;
 }
+
+#title-main {
+  font-size: 300px;
+}
+
+.title-content {
+  text-align: center; /* Ensures "Connect and showcase" stays centered under "FindBlue" */
+  display: flex;
+  flex-direction: column; /* Stacks "FindBlue" and "Connect and showcase" vertically */
+  align-items: center; /* Centers them horizontally */
+}
+
+#title-quote {
+  font-size: 48px; /* Adjust size as needed */
+  font-weight: 600;
+  margin-top: -50px;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 42%, rgba(255,203,5,1) 63%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #title::before {
   content: '';
   position: absolute;
@@ -59,7 +89,7 @@ body {
   justify-content: center;        /* Center the items horizontally */
   align-items: center;            /* Center items vertically */
   color: white;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
   background-Image: url('/michigan_sign_fixed.jpg'); /* Replace with your image path in the public directory*/
   background-Size: cover !important; /* Ensures the image covers the entire div*/
   background-Position: center !important; /* Centers the image*/
@@ -67,25 +97,36 @@ body {
   display: flex;
   margin-Bottom: 200px;
 }
+
+.people-icon {
+  font-size: 5rem; /* Adjust the size as needed */
+  vertical-align: middle; /* Aligns the icon with the text */
+  color: #B57506;
+  margin-left: 30px;
+}
+
 /* Second Section: Quote Section */
 .quote-section {
   /*background-color: #F0F0F0;*/
   background-color: #E8E8F1;
   padding: 100px 0;
   text-align: center;
-  color: #333;
+  color: black;
+  font-weight: 500;
 }
 .quote-section blockquote {
   font-size: 2em;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
   margin: 0;
   padding: 0 250px;
 }
 /* Third Section: Title and Image Buttons */
 .image-buttons-section {
+  font-family: 'Inter';
   padding: 50px 0;
   text-align: center;
 }
+
 .section-title {
   margin-bottom: 0px; /* Space between title and buttons */
 }
@@ -94,52 +135,7 @@ body {
   font-weight: bold;
   color: #333; /* You can adjust the color */
 }
-.image-buttons-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  justify-items: center;
-  width: 100%; /* Adjust width of the container */
-  margin: 0 auto; /* Center the container */
-  padding: 50px;
-  gap: 25px;
-}
-.image-button {
-  position: relative;
-  width: 100%; /* Full width of the container column */
-  border-radius: 10px;
-  overflow: hidden;
-  text-decoration: none;
-  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-  display: flex;
-  flex-direction: column; /* Ensure text wraps to two rows */
-  justify-content: flex-end; /* Align text to the bottom */
-}
-.image-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the button */
-}
-.image-button .label {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 1.5em;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  line-height: 1.2; /* Allow text to wrap into two lines */
-  white-space: normal; /* Ensure the text wraps to the next line */
-  text-align: left;
-}
-.image-button .label .bold-line {
-  font-weight: bold;
-}
-.image-button .label .normal-line {
-  font-weight: normal;
-}
-.image-button:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
+
 /* Fourth Section: Create your profile */
 .profile-section {
   display: flex;
@@ -176,7 +172,7 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
 }
 .profile-button:hover {
   background: linear-gradient(to left, #2196F3, #90CAF9);
@@ -231,18 +227,18 @@ body {
   font-size: 1.5em; /* Adjusted font size for better readability */
   font-weight: bold;
   color: #FFFFFF;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
 }
 .step p {
   font-size: 1em;
   color: #FFFFFF;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
   margin: 10px 0;
 }
 .learn-more {
   font-size: 1.1em;
   color: #FFFFFF;
-  font-family: 'Poppins', serif;
+  font-family: 'Inter', 'Poppins', serif;
   text-decoration: none;
   font-weight: bold;
 }
