@@ -10,42 +10,69 @@ export default function SignUpForm() {
   const [lastName, setLastName] = useState("");
   const router = useRouter();
 
-  async function signUpNewUser(event: { preventDefault: () => void; }) {
-    event.preventDefault();
+  // async function signUpNewUser(event: { preventDefault: () => void; }) {
+  //   event.preventDefault();
 
-    // Create user with email and password
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
-    });
+  //   // Create user with email and password
+  //   const { data, error } = await supabase.auth.signUp({
+  //     email: email,
+  //     password: password,
+  //   });
 
-    if (error) {
-      console.error("Error signing up:", error.message);
-      return;
-    }
+  //   if (error) {
+  //     console.error("Error signing up:", error.message);
+  //     return;
+  //   }
 
-    console.log("Sign up successful:", data);
+  //   console.log("Sign up successful:", data);
 
-    // If sign up is successful, insert first and last name into the UserData table
-    const { error: userError } = await supabase
-      .from("UserData")
-      .insert([
-        {
-          user_id: data.user!.id,
-          first_name: firstName,
-          last_name: lastName,
-          email: email
-        },
-      ]);
+  //   // If sign up is successful, insert first and last name into the UserData table
+  //   const { error: userError } = await supabase
+  //     .from("UserData")
+  //     .insert([
+  //       {
+  //         user_id: data.user!.id,
+  //         first_name: firstName,
+  //         last_name: lastName,
+  //         email: email
+  //       },
+  //     ]);
 
-    if (userError) {
-      console.error("Error adding user data:", userError.message);
-    } else {
-      console.log("User data added successfully.");
-      router.push("/")
-    }
+  //   if (userError) {
+  //     console.error("Error adding user data:", userError.message);
+  //   } else {
+  //     console.log("User data added successfully.");
+  //     router.push("/")
+  //   }
 
+  // }
+
+  const [loading, setLoading] = useState(false);
+
+async function signUpNewUser(event) {
+  event.preventDefault();
+  setLoading(true);
+
+  const { data, error } = await supabase.auth.signUp({ email, password });
+  if (error) {
+    console.error("Error signing up:", error.message);
+    setLoading(false);
+    return;
   }
+
+  const { error: userError } = await supabase.from("UserData").insert([
+    { user_id: data.user!.id, first_name: firstName, last_name: lastName, email },
+  ]);
+
+  if (userError) {
+    console.error("Error adding user data:", userError.message);
+  } else {
+    router.push("/");
+  }
+
+  setLoading(false);
+}
+
 
   return (
     <div className="flex">
