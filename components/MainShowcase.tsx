@@ -16,9 +16,15 @@ export default function NetworkBuildRepeatSection() {
       description: "They make microchips",
       link: "link2.html",
     },
+    // {
+    //   image: "BBB.jpg",
+    //   title: "Sam's Soup",
+    //   description: "They make advanced rocket tech",
+    //   link: "link3.html",
+    // },
     {
       image: "BBB.jpg",
-      title: "Sam's Soup",
+      title: "Owen's Oranges",
       description: "They make advanced rocket tech",
       link: "link3.html",
     },
