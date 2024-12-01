@@ -32,7 +32,7 @@ const ProjectCard = (props: {
       }
     };
     retrieve_user();
-  }, []);
+  }, [props.author_id]);
 
   async function removePost() {
     const { error } = await supabase.from("Posts").delete().eq("id", post.id);
