@@ -59,7 +59,7 @@ const ProjectCard = (props: {
       }}
     >
       <CardContent>
-        <Link href={`/PostPage/${post.id}`} underline="none">
+        <Link href={`/PostPage/${post.id}`} underline="none" color="inherit">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h6" component="h1" fontWeight="bold">
               {props.title}
