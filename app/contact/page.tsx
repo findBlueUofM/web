@@ -40,6 +40,18 @@ export default function About() {
         ></BioCard>
         <BioCard
           profilepic={"../images/michlogo.png"}
+          name="Connor Woods"
+          desc="Hi, I'm Connor Woods, and I love to code!"
+          title="DEV"
+        ></BioCard>
+        <BioCard
+          profilepic={"../images/michlogo.png"}
+          name="Rakesh Kottapali"
+          desc="Hi, I'm Rakesh Kottapali, and I love to code!"
+          title="DEV"
+        ></BioCard>
+        {/* <BioCard
+          profilepic={"../images/michlogo.png"}
           name="Ali Mothana"
           desc="Hi, I'm Ali Mothana, and I love to code!"
           title="DEV"
@@ -49,14 +61,9 @@ export default function About() {
           name="David Nguyen"
           desc="Hi, I'm David Nguyen, and I love to code!"
           title="DEV"
-        ></BioCard>
-        <BioCard
-          profilepic={"../images/michlogo.png"}
-          name="Connor Woods"
-          desc="Hi, I'm Connor Woods, and I love to code!"
-          title="DEV"
-        ></BioCard>
-        <BioCard
+        ></BioCard> */}
+        
+        {/* <BioCard
           profilepic={"../images/michlogo.png"}
           name="James Andersen"
           desc="Hi, I'm James Andersen, and I love to code!"
@@ -79,7 +86,7 @@ export default function About() {
           name="Vishnu Parthiban"
           desc="Hi, I'm Vishnu Parthiban, and I love to code!"
           title="DEV"
-        ></BioCard>
+        ></BioCard> */}
       </Box>
       <Footer />
     </div>
