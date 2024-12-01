@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase";
 import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
 import user_data from "@/lib/user";

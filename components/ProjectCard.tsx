@@ -1,22 +1,14 @@
 import { Card, CardContent, Typography, Button, Link } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import user_data from "@/lib/user";
-import {
-  AwaitedReactNode,
-  JSXElementConstructor,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 const ProjectCard = (props: {
   post: any;
   author_id: any;
-  title: string
-  text: string
+  title: string;
+  text: string;
 }) => {
   const [author, setAuthor] = useState(null);
   const post = props.post;

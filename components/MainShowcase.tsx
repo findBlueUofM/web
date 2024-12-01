@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions } from "@mui/material";
-import PeopleIcon from "@mui/icons-material/People";
+import { Box, Typography,Card, CardMedia, CardContent} from "@mui/material";
+// import PeopleIcon from "@mui/icons-material/People";
 
 export default function NetworkBuildRepeatSection() {
   const items = [

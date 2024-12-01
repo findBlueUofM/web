@@ -11,8 +11,6 @@ import CardActions from '@mui/joy/CardActions';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import SvgIcon from '@mui/joy/SvgIcon';
-import { title } from 'process';
-import { profile } from 'console';
 
 interface SocialMediaLinks {
   linkedin: string,
