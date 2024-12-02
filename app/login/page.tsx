@@ -13,6 +13,7 @@ import LoginIcon from "@mui/icons-material/Login"; // Example icon, can be chang
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useRouter } from "next/navigation";
+import LoginForm from "@/components/LogInForm";
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
@@ -83,56 +84,7 @@ const LoginPage: React.FC = () => {
           p: 4,
         }}
       >
-        <Typography component="h1" variant="h5">
-          Login
-        </Typography>
-
-        <Box
-          component="form"
-          noValidate
-          sx={{
-            mt: 2,
-            width: "100%",
-            maxWidth: 400,
-          }}
-        >
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In
-          </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-            onClick={handleClick}
-          >
-            Don't have an account? Sign Up!
-          </Button>
-        </Box>
+       <LoginForm />
       </Paper>
     </Box>
     <Footer />

@@ -10,6 +10,7 @@ import BioCard from "@/components/TeamInfo";
 import Box from "@mui/joy/Box";
 
 import styles from './about.module.css';
+import AddPostForm from "@/components/AddPostForm";
 export default function About() {
   const router = useRouter();
   const handleContactClick = () => {
@@ -18,7 +19,10 @@ export default function About() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <ProjectCardList/>
+      <Box sx={{display:"flex"}}>
+        <ProjectCardList />
+        <AddPostForm />
+        </Box>
       <Footer />
     </div>
   )}
