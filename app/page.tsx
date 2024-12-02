@@ -64,27 +64,21 @@ export default function Home() {
             <img src="project2_fixed.png" alt="Start Icon" className="step-icon2" />
             <h3>Create your project</h3>
             <p>Got the next best idea in business? Get access to everything you need to take on the world with your StartUp</p>
-            <a href="link1.html" className="learn-more">Learn More</a>
+            <a href="/login" className="learn-more">Learn More</a>
           </div>
           <div className="step grow">
             <img src="proposal_fixed.png" alt="Start Icon" className="step-icon" />
             <h3>Make your proposal</h3>
             <p>Ready to grow your market? Get exclusive access to professionals and leaders to get you there!</p>
-            <a href="link2.html" className="learn-more">Learn More</a>
+            <a href="/login" className="learn-more">Learn More</a>
           </div>
           <div className="step fund">
             <img src="hands_fixed.png" alt="Start Icon" className="step-icon" />
             <h3>Find your team</h3>
             <p>Is your business seeking capital? Access an exclusive network of investors and prepare your business to get Funded!</p>
-            <a href="link3.html" className="learn-more">Learn More</a>
+            <a href="/login" className="learn-more">Learn More</a>
           </div>
         </div>
-      </section>
-      {/* Second Section: Quote Section */}
-      <section className="quote-section">
-        <blockquote>Made for students, by students, FindBlue is the go-to space for students at the University of Michigan
-          to launch ideas and build ventures. We provide a platform for motivated, and driven students to find other students
-          looking to make a difference. </blockquote>
       </section>
       <Footer />
     </div>

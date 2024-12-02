@@ -44,7 +44,6 @@ ul li a {
   margin: 0;                      /* Remove default margin */
   padding: 0;                     /* Remove default padding */
   font-weight: 500
-  font-fami;
 }
 .nav-links li {
   margin-left: 25px;              /* Space between links */
@@ -55,7 +54,7 @@ ul li a {
   display: block;                 /* Block element */
   width: 0;                       /* Start with zero width */
   height: .5px;                   /* Line thickness */
-  background-color: #333;        /* Line color */
+  background-color: white;        /* Line color */
   position: absolute;             /* Relative to the li */
   left: 0;                        /* Align to the left */
   bottom: 0;                      /* Align to the bottom */
