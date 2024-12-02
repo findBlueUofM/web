@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SignUpForm from "@/components/SignUpForm";
 
 const SignupPage: React.FC = () => {
   return (
@@ -66,7 +67,7 @@ const SignupPage: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Right Side: Signup Form */}
+        {/* Right Side: Signup Form */}
       <Paper
         elevation={6}
         sx={{
@@ -77,59 +78,10 @@ const SignupPage: React.FC = () => {
           p: 4,
         }}
       >
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-
-        <Box
-          component="form"
-          noValidate
-          sx={{
-            mt: 2,
-            width: "100%",
-            maxWidth: 400,
-          }}
-        >
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="fullname"
-            label="Full Name"
-            type="text"
-            id="text"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign Up
-          </Button>
-        </Box>
+        <SignUpForm/>
       </Paper>
-    </Box>
+        
+    </Box> 
     <Footer />
     </div>
   );
