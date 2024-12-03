@@ -1,15 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 :root {
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: #171717;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0A0A0A;
-    --foreground: #EDEDED;
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 @layer utilities {
@@ -28,7 +28,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   background-color: white;
   color: black;
 }
@@ -42,7 +42,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Inter', 'Poppins', serif;
+  font-family: "Inter", "Poppins", serif;
   font-weight: 800;
 }
 
@@ -61,20 +61,29 @@ body {
   font-size: 48px; /* Adjust size as needed */
   font-weight: 600;
   margin-top: -50px;
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 42%, rgba(255,203,5,1) 63%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 42%,
+    rgba(255, 203, 5, 1) 63%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 #title::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%; /* Cover the full width of the section */
   height: 100%; /* Cover the full height of the section */
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black for the haze */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Semi-transparent black for the haze */
   z-index: 1; /* Place the overlay above the background but behind content */
   pointer-events: none; /* Allow interactions to pass through */
 }
@@ -82,33 +91,33 @@ body {
   position: relative;
   z-index: 2; /* Keep content above the overlay */
 }
-#title2{
+#title2 {
   width: 100%;
   font-size: 200px;
-  display: flex;                  /* Use flexbox to align items */
-  justify-content: center;        /* Center the items horizontally */
-  align-items: center;            /* Center items vertically */
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center items vertically */
   color: white;
-  font-family: 'Inter', 'Poppins', serif;
-  background-Image: url('/michigan_sign_fixed.jpg'); /* Replace with your image path in the public directory*/
-  background-Size: cover !important; /* Ensures the image covers the entire div*/
-  background-Position: center !important; /* Centers the image*/
+  font-family: "Inter", "Poppins", serif;
+  background-image: url("/michigan_sign_fixed.jpg"); /* Replace with your image path in the public directory*/
+  background-size: cover !important; /* Ensures the image covers the entire div*/
+  background-position: center !important; /* Centers the image*/
   height: 40%; /* Ensures the div takes up the full height of the viewport*/
   display: flex;
-  margin-Bottom: 200px;
+  margin-bottom: 200px;
 }
 
 .people-icon {
   font-size: 5rem; /* Adjust the size as needed */
   vertical-align: middle; /* Aligns the icon with the text */
-  color: #B57506;
+  color: #b57506;
   margin-left: 30px;
 }
 
 /* Second Section: Quote Section */
 .quote-section {
   /*background-color: #F0F0F0;*/
-  background-color: #E8E8F1;
+  background-color: #e8e8f1;
   padding: 100px 0;
   text-align: center;
   color: black;
@@ -116,13 +125,13 @@ body {
 }
 .quote-section blockquote {
   font-size: 2em;
-  font-family: 'Inter', 'Poppins', serif;
+  font-family: "Inter", "Poppins", serif;
   margin: 0;
   padding: 0 250px;
 }
 /* Third Section: Title and Image Buttons */
 .image-buttons-section {
-  font-family: 'Inter';
+  font-family: "Inter";
   padding: 50px 0;
   text-align: center;
 }
@@ -141,7 +150,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #FFFFFF ,  white);
+  background: linear-gradient(to bottom, #ffffff, white);
   height: 800px; /* Adjust height as needed */
   color: #333;
 }
@@ -164,7 +173,7 @@ body {
 }
 .profile-button {
   /*background: linear-gradient(to right, #09203F ,  #537895);*/
-  background: linear-gradient(to right, #2196F3, #90CAF9);
+  background: linear-gradient(to right, #2196f3, #90caf9);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -172,10 +181,10 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: 'Inter', 'Poppins', serif;
+  font-family: "Inter", "Poppins", serif;
 }
 .profile-button:hover {
-  background: linear-gradient(to left, #2196F3, #90CAF9);
+  background: linear-gradient(to left, #2196f3, #90caf9);
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
@@ -192,7 +201,7 @@ body {
 .step-by-step-section {
   padding: 80px 0;
   text-align: center;
-  background: linear-gradient(to bottom, #FFFFFF, #FFFFFF);
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
   height: 800px; /* Adjust height as needed */
   padding-top: 100px;
   color: #333;
@@ -202,7 +211,7 @@ body {
   justify-content: space-between;
   gap: 40px;
   padding-top: 40px;
-  margin-left: 50px;  /* Push sections slightly off the left edge */
+  margin-left: 50px; /* Push sections slightly off the left edge */
   margin-right: 50px; /* Push sections slightly off the right edge */
 }
 .step {
@@ -226,19 +235,19 @@ body {
 .step h3 {
   font-size: 1.5em; /* Adjusted font size for better readability */
   font-weight: bold;
-  color: #FFFFFF;
-  font-family: 'Inter', 'Poppins', serif;
+  color: #ffffff;
+  font-family: "Inter", "Poppins", serif;
 }
 .step p {
   font-size: 1em;
-  color: #FFFFFF;
-  font-family: 'Inter', 'Poppins', serif;
+  color: #ffffff;
+  font-family: "Inter", "Poppins", serif;
   margin: 10px 0;
 }
 .learn-more {
   font-size: 1.1em;
-  color: #FFFFFF;
-  font-family: 'Inter', 'Poppins', serif;
+  color: #ffffff;
+  font-family: "Inter", "Poppins", serif;
   text-decoration: none;
   font-weight: bold;
 }
@@ -253,11 +262,35 @@ body {
   margin-bottom: 10px; /* Space between image and heading */
 }
 .start {
-  background: linear-gradient(to bottom, #2196F3, #90CAF9);
+  background: linear-gradient(to bottom, #2196f3, #90caf9);
 }
 .grow {
-  background: linear-gradient(to bottom, #2196F3, #90CAF9);
+  background: linear-gradient(to bottom, #2196f3, #90caf9);
 }
 .fund {
-  background: linear-gradient(to bottom, #2196F3, #90CAF9);
+  background: linear-gradient(to bottom, #2196f3, #90caf9);
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Set the background to white or your desired color */
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+.loading-screen h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2rem;
+}
+
+.MuiCircularProgress-root {
+  color: #3498db; /* Customize spinner color */
 }
