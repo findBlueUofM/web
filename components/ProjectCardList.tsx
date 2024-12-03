@@ -1,7 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
 import user_data from "@/lib/user";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
+import loadConfig from "next/dist/server/config";
 
 export default function ProjectCardList() {
   type PostType = {
@@ -23,7 +24,6 @@ export default function ProjectCardList() {
       });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
   if (!posts) return <p>No post data</p>;
   if (!user_data) {
     return <p>No User!</p>;

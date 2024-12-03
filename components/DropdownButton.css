@@ -1,46 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 /* Dropdown Button Styles */
 .dropdown-container {
-    position: relative; /* Allows dropdown to position absolutely */
+  position: relative; /* Allows dropdown to position absolutely */
 }
 .dropdown-button {
-    color: white;
-    border: none;
-    border-radius: 20px; /* Rounded corners */
-    width: 50px; /* Set a fixed width */
-    height: 50px; /* Set a fixed height */
-    display: flex; /* Center the icon */
-    justify-content: center; /* Center the icon horizontally */
-    align-items: center; /* Center the icon vertically */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth color transition */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  display: flex; /* Center the icon */
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth color transition */
 }
 /* Dropdown Menu Styles */
 .dropdown-menu {
-    position: absolute; /* Position the dropdown absolutely */
-    top: 100%; /* Position it directly below the button */
-    left: 50%; /* Center the dropdown */
-    transform: translateX(-50%); /* Offset to center */
-    background-color: white; /* Background color */
-    border-radius: 4px; /* Rounded corners */
-    z-index: 1000; /* Ensure it appears above other content */
-    min-width: 120px; /* Minimum width */
+  position: absolute; /* Position the dropdown absolutely */
+  top: 100%; /* Position it directly below the button */
+  left: 50%; /* Center the dropdown */
+  transform: translateX(-50%); /* Offset to center */
+  background-color: white; /* Background color */
+  border-radius: 4px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other content */
+  min-width: 120px; /* Minimum width */
 }
 /* Dropdown Menu Item Styles */
 .dropdown-menu a {
-    display: block; /* Full width for links */
-    padding: 12px 20px; /* Padding for links (top/bottom, left/right) */
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Text color */
-    text-align: center;
-    position: relative; /* For pseudo-element positioning */
-    font-family: 'Inter', 'Poppins', serif;
-    font-weight: 700;
+  display: block; /* Full width for links */
+  padding: 12px 20px; /* Padding for links (top/bottom, left/right) */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Text color */
+  text-align: center;
+  position: relative; /* For pseudo-element positioning */
+  font-family: "Inter", "Poppins", serif;
+  font-weight: 700;
+  font-size: medium;
 }
-
-
-
-
-
-
-
