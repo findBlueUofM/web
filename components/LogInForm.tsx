@@ -1,23 +1,28 @@
+'use client'
+
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
+
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const router = useRouter();
 
   async function signInWithEmail(event) {
     event.preventDefault();
+    setErrorMsg(""); // Reset the error message before each login attempt
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
     if (error) {
-      console.error("Error logging in:", error.message);
+      setErrorMsg(error.message); // Set the error message from Supabase
     } else {
       console.log("Log in successful:", data);
-      router.push("/");
+      router.push("/"); // Redirect on successful login
     }
   }
 
@@ -69,6 +74,12 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        {/* Display error message if there's one */}
+        {errorMsg && (
+          <Typography color="error" sx={{ textAlign: "center" }}>
+            {errorMsg}. Please try again.
+          </Typography>
+        )}
         <Button
           type="submit"
           variant="contained"
