@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { TextField, Button, Box } from "@mui/material";
-import user_data from "@/lib/user";
 import { useRouter } from "next/navigation";
+import { User } from "@supabase/supabase-js";
 export default function AddPostForm() {
-  // const [user_data, setUserData] = useState(null);
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const { data, error } = await supabase.auth.getUser();
-  //     if (error) {
-  //       // console.error("Error fetching user:", error);
-  //     } else {
-  //       setUserData(data.user); // Assign data to user_data state
-  //       // console.log("User data:", data.user);
-  //     }
-  //   };
+  const [user_data, setUserData] = useState<User>();
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data, error } = await supabase.auth.getUser();
+      if (error) {
+        console.error("Error fetching user:", error);
+      } else {
+        setUserData(data.user); // Assign data to user_data state
+        console.log("User data:", data.user);
+      }
+    };
 
-  //   fetchUser();
-  // }, []);
+    fetchUser();
+  }, []);
 
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
@@ -41,6 +41,7 @@ export default function AddPostForm() {
           author_id: user_data!.id,
           description: formValues.description,
           date: new Date().toLocaleDateString("en-CA"),
+          user_name: formValues.user_name,
         },
       ])
       .select();
@@ -57,6 +58,14 @@ export default function AddPostForm() {
 
           <form onSubmit={handleSubmit}>
             <Box className="my-2">
+              {" "}
+              <TextField
+                label="Name"
+                name="user_name"
+                required
+                variant="outlined"
+                fullWidth
+              />
               <TextField
                 label="Title"
                 name="title"

@@ -10,9 +10,9 @@ import {
 } from "@mui/joy";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Box } from "@mui/material";
-import user_data from "@/lib/user";
+import { User } from "@supabase/supabase-js";
 
 const ProjectCard = (props: {
   post: any;
@@ -21,8 +21,20 @@ const ProjectCard = (props: {
   summary: string;
 }) => {
   const [author, setAuthor] = useState(null);
+  const [user_data, setUserData] = useState<User>();
 
   useEffect(() => {
+    const fetchUser = async () => {
+      const { data, error } = await supabase.auth.getUser();
+      if (error) {
+        console.error("Error fetching user:", error);
+      } else {
+        setUserData(data.user); // Assign data to user_data state
+        console.log("User data:", data.user);
+      }
+    };
+
+    fetchUser();
     const retrieve_user = async () => {
       const { data, error } = await supabase
         .from("UserData")
@@ -75,7 +87,15 @@ const ProjectCard = (props: {
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
         <IconButton variant="outlined" color="neutral">
-          <FavoriteBorder />
+          <VisibilityIcon />
+          {/*ADD IMPLEMENTATION HERE OF WHEN USER CLICKS ON 
+          THIS VISIBILITY ICON
+          essentially, this will be a feature where you can "watch"
+          a post, basically, if they want to revisit a post later
+          that seems interesting to them, they can click this icon
+          this will also display (right next to the icon)
+          the number of people watching this post (need to add another column in the database)
+          */}
         </IconButton>
         <Button
           variant="outlined"
