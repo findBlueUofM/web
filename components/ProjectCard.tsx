@@ -1,18 +1,27 @@
-import { Card, CardContent, Typography, Button, Link } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import user_data from "@/lib/user";
-import { useEffect, useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Typography,
+  IconButton,
+  Button,
+  Avatar,
+  AvatarGroup,
+} from "@mui/joy";
+import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import { Box } from "@mui/material";
+import user_data from "@/lib/user";
 
 const ProjectCard = (props: {
   post: any;
-  author_id: any;
+  author_id: string;
   title: string;
-  text: string;
+  summary: string;
 }) => {
   const [author, setAuthor] = useState(null);
-  const post = props.post;
-  // console.log(props.author_id);
+
   useEffect(() => {
     const retrieve_user = async () => {
       const { data, error } = await supabase
@@ -20,68 +29,70 @@ const ProjectCard = (props: {
         .select("*")
         .eq("user_id", props.author_id);
 
-      if (error) {
-        console.log(error);
-      } else {
-        if (data) {
-          setAuthor(data[0]);
-          // console.log(data[0]);
-        } else {
-          console.log(data);
-        }
-      }
+      if (data) setAuthor(data[0]);
+      if (error) console.error(error);
     };
     retrieve_user();
   }, [props.author_id]);
 
-  async function removePost() {
-    const { error } = await supabase.from("Posts").delete().eq("id", post.id);
-    location.reload();
-  }
+  const removePost = async () => {
+    const { error } = await supabase
+      .from("Posts")
+      .delete()
+      .eq("id", props.post.id);
+    if (!error) window.location.reload();
+  };
   return (
     <Card
+      variant="outlined"
       sx={{
-        backgroundColor: "#A9A9A9",
-        padding: "1px",
-        width: "250px",
-        border: 1,
-        borderColor: "grey.300",
-        borderRadius: 2,
+        width: 320,
+        overflow: "auto",
+        resize: "horizontal",
+        padding: 2,
+        borderRadius: "16px",
         boxShadow: 2,
+        backgroundColor: "whitesmoke",
       }}
     >
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 2,
+        }}
+      >
+        <Avatar src={"/leaves.jpeg"} alt={"H"} />
+      </Box>
       <CardContent>
-        <Link href={`/posts/${post.id}`} underline="none" color="inherit">
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Typography variant="h6" component="h1" fontWeight="bold">
-              {props.title}
-            </Typography>
-            {user_data!.id === props.author_id && (
-              <Button onClick={removePost}>
-                <CloseIcon />
-              </Button>
-            )}
-          </div>
-          <Typography variant="body2" component="p">
-            {props.text}
-          </Typography>
-        </Link>
-        <div style={{ display: "flex", gap: "10px" }}>
-          {author ? (
-            <Typography variant="body2">
-              <a
-                href={`mailto:${author["email"]}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {author["first_name"]}
-              </a>
-            </Typography>
-          ) : (
-            <Typography variant="body2">Loading author...</Typography>
-          )}
-        </div>
+        <Typography level="h4" fontWeight="bold">
+          {props.title}
+        </Typography>
+        <Typography level="body-sm" mt={1}>
+          {props.summary}
+        </Typography>
       </CardContent>
+      <CardActions sx={{ justifyContent: "space-between" }}>
+        <IconButton variant="outlined" color="neutral">
+          <FavoriteBorder />
+        </IconButton>
+        <Button
+          variant="outlined"
+          onClick={() => (window.location.href = `/posts/${props.post.id}`)}
+          sx={{
+            border: "none", // Removes the border
+            padding: "6px 12px", // Optional: Adjust padding as needed
+          }}
+        >
+          View
+        </Button>
+        {props.author_id === user_data?.id && (
+          <Button variant="solid" color="danger" onClick={removePost}>
+            Delete
+          </Button>
+        )}
+      </CardActions>
     </Card>
   );
 };

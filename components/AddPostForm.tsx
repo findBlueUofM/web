@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { TextField, Button, Box } from "@mui/material";
 import user_data from "@/lib/user";
+import { useRouter } from "next/navigation";
 export default function AddPostForm() {
   // const [user_data, setUserData] = useState(null);
   // useEffect(() => {
@@ -18,25 +19,34 @@ export default function AddPostForm() {
   //   fetchUser();
   // }, []);
 
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  const handleClick = () => {
+    router.push("/projects");
+  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form_data = new FormData(e.target as HTMLFormElement);
     const formValues = Object.fromEntries((form_data as any).entries()); // Convert to object
-
     const { data, error } = await supabase
       .from("Posts")
       .insert([
         {
           title: formValues.title,
-          text: formValues.text,
+          summary: formValues.summary,
           author_id: user_data!.id,
+          description: formValues.description,
+          date: new Date().toLocaleDateString("en-CA"),
         },
       ])
       .select();
     location.reload();
   };
-
+  if (!isClient) return null;
   return (
     <div>
       {user_data ? (
@@ -56,14 +66,28 @@ export default function AddPostForm() {
               />
             </Box>
             <TextField
-              label="Text"
-              name="text"
+              label="Summary"
+              name="summary"
               required
               variant="outlined"
               fullWidth
               multiline
             />
-            <Button type="submit" variant="contained" color="primary" className="mb-10">
+            <TextField
+              label="Description"
+              name="description"
+              required
+              variant="outlined"
+              fullWidth
+              multiline
+            />
+            <Button
+              onClick={handleClick}
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="mb-10"
+            >
               Submit
             </Button>
           </form>
