@@ -31,11 +31,12 @@ ul li a {
 }
 .logo {
   margin-right: 20px;
-  border-radius: 50%; /* Makes the logo circular */
+  /* border-radius: 50%; Makes the logo circular */
   overflow: hidden; /* Hides the parts outside the circular area */
   object-fit: cover; /* Ensures the image fills the circle area */
   height: 40px;
-  width: 40px;
+  width: 100px;
+  /* background-color: white; */
 }
 /* Nav link styles */
 .nav-links {

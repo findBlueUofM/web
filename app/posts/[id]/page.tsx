@@ -1,53 +1,65 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
-import { use, useState, useEffect } from "react"; // Import use
+import { use, useState, useEffect } from "react"; // Using `use` to unwrap params
 import { supabase } from "@/lib/supabase";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { useRouter } from "next/router";
-import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 
-interface PostQuery {
+interface Post {
   id: string;
+  title: string;
+  content: string;
+  // Add other properties as per your Posts table
 }
 
-// export const getStaticProps = (async (context) => {
-//   const { data, error } = await supabase
-//         .from("Posts")
-//         .select("*")
-//           .eq("id", id);
-//   return { props: { data } }
-// }) satisfies GetStaticProps<{
-//   repo: Repo
-// }>
+export default function UniquePosts({ params }: { params: Promise<{ id: string }> }) {
+  const unwrappedParams = use(params); // Unwrap the Promise with `use`
+  const [post, setPost] = useState<Post | null>(null); // Explicit type for post
+  const { id } = unwrappedParams;
 
-export default function UniquePosts(props) {
-  const router = useRouter();
-  // const resolvedParams: PostQuery = use(params); // Unwrap the promise
-  const [post, setPost] = useState({}); //post is a json with the data from supabase
-  const { id } = router.query;
   useEffect(() => {
+    if (!id) {
+      console.error("Post ID is missing");
+      return;
+    }
+
     const retrievePost = async () => {
-      const { data, error } = await supabase
-        .from("Posts")
-        .select("*")
-          .eq("id", id);
-        
+      try {
+        const { data, error } = await supabase
+          .from("Posts")
+          .select("*")
+          .eq("id", id)
+          .single(); // Fetch a single post by ID
+
         if (error) {
-            
+          console.error("Error fetching post:", error);
         } else {
-            // console.log(data);
-            setPost(data);
+          setPost(data);
         }
+      } catch (error) {
+        console.error("Unexpected error fetching post:", error);
+      }
     };
-      retrievePost();
-  }, []);
+
+    retrievePost();
+  }, [id]);
+
+  if (!post) {
+    return (
+      <div className="uniquePost">
+        <Navbar />
+        <p>Loading...</p>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="uniquePost">
       <Navbar />
-      <p>Post: {id}</p>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <Link href="/" className="logo">
-          <img id="logo" src="michtransparent.png" alt="Michigan Logo" />
+          <img id="logo" src="/findBlueLogo.png" alt="Michigan Logo" />
         </Link>
         <ul className="nav-links">
           <li><Link href="/about">About</Link></li>

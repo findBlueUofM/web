@@ -64,18 +64,18 @@ export default function Home() {
     );
   }
 
-  if (user) {
-    return (
-      <div>
-        <Navbar />
-        <Box sx={{ display: "flex" }}>
-          <ProjectCardList />
-          <AddPostForm />
-        </Box>
-        <Footer />
-      </div>
-    );
-  }
+  // if (user) {
+  //   return (
+  //     <div>
+  //       <Navbar />
+  //       <Box sx={{ display: "flex" }}>
+  //         <ProjectCardList />
+  //         <AddPostForm />
+  //       </Box>
+  //       <Footer />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
@@ -101,7 +101,7 @@ export default function Home() {
         {/* Centered title above the image buttons */}
         <div className="section-title">
           <h2>
-            Network, build, repeat.
+            Network. Build. Repeat.
             <PeopleIcon className="people-icon" />
           </h2>
         </div>
