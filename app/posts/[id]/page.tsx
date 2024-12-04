@@ -70,24 +70,23 @@ export default function UniquePosts({ params }: { params: { id: string } }) {
           <Card
             key={p.id}
             sx={{
-              width: 600,
-              maxWidth: "100%",
+              maxWidth: "800px", // Max width to prevent excessive stretching
               boxShadow: "lg",
-              mb: 2,
-              height: 300,
+              borderRadius: "20px",
+              padding: "20px", // Ensure spacing inside the card
+              display: "flex",
+              flexDirection: "column", // Ensure the content stacks neatly
+              gap: "1rem", // Add space between elements
             }}
           >
             <CardContent sx={{ alignItems: "center", textAlign: "center" }}>
               <Avatar src={p.avatar_url} sx={{ "--Avatar-size": "4rem" }} />
               <Typography level="title-lg">{p.user_name}</Typography>
-              <Typography level="body-sm" sx={{ maxWidth: "24ch" }}>
-                {p.description}
+              <Typography level="body-sm" sx={{ color: "gray", mt: 1 }}>
+                <b>Posted:</b> {p.date}
               </Typography>
               <Typography level="body-sm" sx={{ color: "gray", mt: 1 }}>
-                Posted: {p.date}
-              </Typography>
-              <Typography level="body-sm" sx={{ color: "gray", mt: 1 }}>
-                Description: {p.description}
+                <b>Description:</b> {p.description}
               </Typography>
               <Box
                 sx={{
