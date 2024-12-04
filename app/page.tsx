@@ -53,17 +53,6 @@ export default function Home() {
     };
   }, [router]);
 
-  if (isLoading && user) {
-    return (
-      <div className="loading-screen">
-        <h1>Loading...</h1>
-        <Box sx={{ display: "flex" }}>
-          <CircularProgress />
-        </Box>
-      </div>
-    );
-  }
-
   // if (user) {
   //   return (
   //     <div>
@@ -102,7 +91,7 @@ export default function Home() {
         <div className="section-title">
           <h2>
             Network. Build. Repeat.
-            <PeopleIcon className="people-icon" />
+            <PeopleIcon className="people-icon" fontSize="large" />
           </h2>
         </div>
         <NetworkBuildRepeatSection />
