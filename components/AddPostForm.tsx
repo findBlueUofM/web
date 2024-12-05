@@ -3,6 +3,15 @@ import { supabase } from "@/lib/supabase";
 import { TextField, Button, Box } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { User } from "@supabase/supabase-js";
+import { Interface } from "readline";
+
+interface Socials {
+  email: string;
+  github?: string;
+  linkedin?: string;
+  instagram?: string;
+}
+
 export default function AddPostForm() {
   const [user_data, setUserData] = useState<User>();
   useEffect(() => {
@@ -24,14 +33,28 @@ export default function AddPostForm() {
   useEffect(() => {
     setIsClient(true);
   }, []);
-  const handleClick = () => {
-    router.push("/projects");
-  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form_data = new FormData(e.target as HTMLFormElement);
     const formValues = Object.fromEntries((form_data as any).entries()); // Convert to object
+    if (
+      !formValues.user_name ||
+      !formValues.title ||
+      !formValues.summary ||
+      !formValues.description ||
+      !formValues.email
+    ) {
+      alert("Please fill out all required fields.");
+      return;
+    } else {
+    const socials: Socials = {
+      email: formValues.email,
+      github: formValues.github,
+      linkedin: formValues.linkedin,
+      instagram: formValues.instagram 
+    }
     const { data, error } = await supabase
       .from("Posts")
       .insert([
@@ -42,10 +65,12 @@ export default function AddPostForm() {
           description: formValues.description,
           date: new Date().toLocaleDateString("en-CA"),
           user_name: formValues.user_name,
+          socials
         },
       ])
       .select();
-    location.reload();
+    router.push("/projects");
+    }
   };
   if (!isClient) return null;
   return (
@@ -90,8 +115,37 @@ export default function AddPostForm() {
               fullWidth
               multiline
             />
+            <TextField
+              label="Email"
+              name="email"
+              type="email"
+              required
+              variant="outlined"
+              fullWidth
+              multiline
+            />
+            <TextField
+              label="GitHub"
+              name="github"
+              variant="outlined"
+              fullWidth
+              multiline
+            />
+            <TextField
+              label="LinkedIn"
+              name="linkedin"
+              variant="outlined"
+              fullWidth
+              multiline
+            />
+            <TextField
+              label="Instagram"
+              name="instagram"              
+              variant="outlined"
+              fullWidth
+              multiline
+            />
             <Button
-              onClick={handleClick}
               type="submit"
               variant="contained"
               color="primary"

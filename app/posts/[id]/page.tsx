@@ -20,6 +20,14 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 
+
+interface Socials {
+  email: string;
+  github?: string;
+  linkedin?: string;
+  instagram?: string;
+}
+
 interface PostData {
   author_id: string;
   id: number;
@@ -29,6 +37,7 @@ interface PostData {
   user_name: string;
   description: string;
   avatar_url: string;
+  socials: Socials;
 }
 
 
@@ -99,15 +108,15 @@ export default function UniquePosts({ params }: { params: Promise<{id: string}> 
                   "& > button": { borderRadius: "2rem" },
                 }}
               >
-                <IconButton size="sm" variant="plain" color="neutral">
+              {p.socials.linkedin != "" ? <IconButton size="sm" variant="plain" color="neutral">
                   <LinkedInIcon />
-                </IconButton>
-                <IconButton size="sm" variant="plain" color="neutral">
+                </IconButton> : <></>}
+                {p.socials.instagram != "" ? <IconButton size="sm" variant="plain" color="neutral">
                   <InstagramIcon />
-                </IconButton>
-                <IconButton size="sm" variant="plain" color="neutral">
+                </IconButton> : <></>}
+                {p.socials.github != "" ? <IconButton size="sm" variant="plain" color="neutral">
                   <GitHubIcon />
-                </IconButton>
+                </IconButton> : <></>}
                 <IconButton size="sm" variant="plain" color="neutral">
                   <EmailIcon />
                 </IconButton>
