@@ -12,6 +12,11 @@ interface Socials {
   instagram?: string;
 }
 
+const LINKEDIN_REGEX = "^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$"
+const GITHUB_REGEX = "^https?://github\.com/([a-zA-Z0-9._-]+)$";
+const INSTAGRAM_REGEX = "^https:\\/\\/www\\.instagram\\.com\\/.*$";
+
+
 export default function AddPostForm() {
   const [user_data, setUserData] = useState<User>();
   useEffect(() => {
@@ -55,6 +60,28 @@ export default function AddPostForm() {
       linkedin: formValues.linkedin,
       instagram: formValues.instagram 
     }
+    const githubValid = formValues.github
+    ? new RegExp(GITHUB_REGEX).test(formValues.github as string)
+    : true;
+  const linkedinValid = formValues.linkedin
+    ? new RegExp(LINKEDIN_REGEX).test(formValues.linkedin as string)
+    : true;
+  const instagramValid = formValues.instagram
+    ? new RegExp(INSTAGRAM_REGEX).test(formValues.instagram as string)
+    : true;
+
+  if (!githubValid) {
+    alert("Invalid GitHub URL. Please provide a valid GitHub profile link.");
+    return;
+  }
+  if (!linkedinValid) {
+    alert("Invalid LinkedIn URL. Please provide a valid LinkedIn profile link.");
+    return;
+  }
+  if (!instagramValid) {
+    alert("Invalid Instagram URL. Please provide a valid Instagram profile link.");
+    return;
+  }
     const { data, error } = await supabase
       .from("Posts")
       .insert([
