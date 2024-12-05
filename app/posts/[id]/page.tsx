@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, use } from "react";
 import Avatar from "@mui/joy/Avatar";
-import Chip from "@mui/joy/Chip";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import ButtonGroup from "@mui/joy/ButtonGroup";
@@ -32,11 +31,13 @@ interface PostData {
   avatar_url: string;
 }
 
-export default function UniquePosts({ params }: { params: { id: string } }) {
+
+export default function UniquePosts({ params }: { params: Promise<{id: string}> }) {
   const [post, setPost] = useState<PostData[]>([]);
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  const resolvedParams: PostQuery = use(params); // Unwrap the promise
+
+  // Unwrap the `params` promise using `React.use()`
+  const resolvedParams = use(params);
+
   useEffect(() => {
     const retrievePost = async () => {
       const { data, error } = await supabase
@@ -45,12 +46,14 @@ export default function UniquePosts({ params }: { params: { id: string } }) {
         .eq("id", resolvedParams.id);
 
       if (error) {
-      } else {
+        console.error(error);
+      } else if (data) {
         setPost(data);
       }
     };
     retrievePost();
-  }, []);
+  }, [resolvedParams.id]);
+
 
   return (
     <div
