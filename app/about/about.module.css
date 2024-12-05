@@ -1,0 +1,23 @@
+.about-page {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+  }
+  
+  .about-header-title {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .about-header-title h2 {
+    font-size: 5em;
+    font-weight: bold;
+    color: #333; /* You can adjust the color */
+  }
+  
+  .about-header-title .BackHandIcon-root {
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  
+  .about-us p {
+    text-align: center;
+  }

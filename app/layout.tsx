@@ -26,7 +26,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="root-layout">
+        <div className="page-content">{children}</div>
+        <footer className="footer">
+          <p className="footer-text">© 2024 FindBlue@Michigan | findblue@umich.edu</p>
+        </footer>
+      </body>
     </html>
   );
 }

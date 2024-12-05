@@ -11,10 +11,8 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import CardActions from "@mui/joy/CardActions";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
-import SvgIcon from "@mui/joy/SvgIcon";
 import { supabase } from "@/lib/supabase";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -135,7 +133,6 @@ export default function UniquePosts({ params }: { params: Promise<{id: string}> 
           </Card>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

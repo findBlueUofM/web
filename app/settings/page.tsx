@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -33,7 +32,6 @@ export default function Settings() {
     <div>
       <Navbar />
       <div>Settings</div>
-      <Footer />
     </div>
   );
 }

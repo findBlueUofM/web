@@ -1,7 +1,6 @@
 "use client";
 
 import AddPostForm from "@/components/AddPostForm";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function SubmitPost() {
@@ -11,7 +10,6 @@ export default function SubmitPost() {
       <div className="form">
         <AddPostForm />;
       </div>
-      <Footer />
     </div>
   );
 }

@@ -9,7 +9,6 @@ import {
   Paper,
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SignUpForm from "@/components/SignUpForm";
 
 const SignupPage: React.FC = () => {
@@ -82,7 +81,6 @@ const SignupPage: React.FC = () => {
       </Paper>
         
     </Box> 
-    <Footer />
     </div>
   );
 };

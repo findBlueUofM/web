@@ -2,8 +2,6 @@
 import Navbar from "../../components/Navbar";
 import Box from "@mui/material/Box";
 import ProjectCardList from "../../components/ProjectCardList";
-import AddPostForm from "../../components/AddPostForm";
-import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 import ForumIcon from "@mui/icons-material/Forum";
 
@@ -31,7 +29,6 @@ export default function Projects() {
       <Box sx={{ display: "flex" }}>
         <ProjectCardList />
       </Box>
-      <Footer />
     </div>
   );
 }

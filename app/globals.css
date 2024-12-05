@@ -32,6 +32,38 @@ body {
   background-color: white;
   color: black;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.root-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make the page span the full viewport height */
+}
+
+.page-content {
+  flex: 1; /* Allow the content to grow and push the footer to the bottom */
+}
+
+.footer {
+  background-color: rgb(31, 41, 55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* Fixed height */
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+.footer-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 550;
+  margin: 0;
+}
 /* First Section: Large Image + title */
 #title {
   position: relative;

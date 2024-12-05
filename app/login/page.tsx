@@ -3,15 +3,10 @@
 import React from "react";
 import {
   Box,
-  TextField,
   Typography,
-  Button,
   Paper,
-  IconButton,
 } from "@mui/material";
-import LoginIcon from "@mui/icons-material/Login"; // Example icon, can be changed
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useRouter } from "next/navigation";
 import LoginForm from "@/components/LogInForm";
 
@@ -87,7 +82,6 @@ const LoginPage: React.FC = () => {
        <LoginForm />
       </Paper>
     </Box>
-    <Footer />
     </div>
   );
 };

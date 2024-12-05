@@ -2,14 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import PeopleIcon from "@mui/icons-material/People";
 import { supabase } from "@/lib/supabase";
 import NetworkBuildRepeatSection from "@/components/MainShowcase";
-import { Box, CircularProgress } from "@mui/material";
-import ProjectCardList from "@/components/ProjectCardList";
-import AddPostForm from "@/components/AddPostForm";
-
 export default function Home() {
   const [user, setUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Loading state
@@ -162,7 +157,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

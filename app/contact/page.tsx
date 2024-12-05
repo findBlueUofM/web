@@ -1,9 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import Link from "next/link";
-import Image from "next/image";
 
 import BioCard from "@/components/TeamInfo";
 import Box from "@mui/joy/Box";
@@ -87,7 +84,6 @@ export default function About() {
           title="DEV"
         ></BioCard>
       </Box>
-      <Footer />
     </div>
   );
 }
