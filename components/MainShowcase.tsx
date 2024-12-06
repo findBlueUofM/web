@@ -1,81 +1,113 @@
-import * as React from "react";
-import { Box, Typography,Card, CardMedia, CardContent} from "@mui/material";
-// import PeopleIcon from "@mui/icons-material/People";
+import React from "react";
+import { Box } from "@mui/material";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Card from "@mui/joy/Card";
+import CardContent from "@mui/joy/CardContent";
+import CardOverflow from "@mui/joy/CardOverflow";
+import Divider from "@mui/joy/Divider";
+import Typography from "@mui/joy/Typography";
 
 export default function NetworkBuildRepeatSection() {
   const items = [
     {
-      image: "fallstock.jpg",
-      title: "Connor's Burger Bar",
-      description: "He makes burgers",
-      link: "link1.html",
+      image: "gal1.jpg",
+      title: "ByteForge",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "300.5k views",
+      time: "10 minutes ago",
     },
     {
-      image: "leaves.jpeg",
-      title: "David's Microchip Company",
-      description: "They make microchips",
-      link: "link2.html",
-    },
-    // {
-    //   image: "BBB.jpg",
-    //   title: "Sam's Soup",
-    //   description: "They make advanced rocket tech",
-    //   link: "link3.html",
-    // },
-    {
-      image: "BBB.jpg",
-      title: "Owen's Oranges",
-      description: "They make advanced rocket tech",
-      link: "link3.html",
+      image: "gal2.jpg",
+      title: "CloudMinds",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "1.2m views",
+      time: "2 hours ago",
     },
     {
-      image: "michigan_sign_fixed.jpg",
-      title: "Pravesh",
-      description: "Pravesh",
-      link: "link4.html",
+      image: "gal3.png",
+      title: "PixelPioneers",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "978.2k views",
+      time: "5 hours ago",
+    },
+    {
+      image: "gal4.png",
+      title: "QuantumHorizon",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "30.2k views",
+      time: "1 day ago",
+    },
+    {
+      image: "gal5.jpg",
+      title: "CodeVortex",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "96.3k views",
+      time: "1 day ago",
+    },
+    {
+      image: "gal6.jpg",
+      title: "SiliconNexus",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      views: "120.3k views",
+      time: "1 day ago",
     },
   ];
 
   return (
-    <Box component="section" sx={{ padding: 4, textAlign: "center" }}>
-      {/* Cards Container */}
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: 3,
-        }}
-      >
-        {items.map((item, index) => (
-          <Card
-            key={index}
-            sx={{
-              width: 500,
-              boxShadow: 4,
-              borderRadius: 2,
-              "&:hover": { boxShadow: 6 },
-            }}
-          >
-            {/* Card Media */}
-            <CardMedia
-              component="img"
-              image={item.image}
-              alt={item.title}
-              sx={{ height: 160 }}
-            />
-            {/* Card Content */}
-            <CardContent>
-              <Typography variant="h6" component="div" fontWeight="bold" fontFamily={'Inter'}>
-                {item.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" fontFamily={'Inter'}>
-                {item.description}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </Box>
-    </Box>
+    <main
+      style={{ display: "flex", justifyContent: "center", padding: "20px" }}
+    >
+      <section id="networkbuildrepeat">
+        <Box className="grid">
+          {items.map((item, index) => (
+            <Card key={index} variant="outlined" className="card">
+              <CardOverflow>
+                <AspectRatio ratio="2">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    style={{ width: "100%" }}
+                  />
+                </AspectRatio>
+              </CardOverflow>
+              <CardContent>
+                <Typography level="title-md">{item.title}</Typography>
+                <Typography level="body-sm">{item.description}</Typography>
+              </CardContent>
+              <CardOverflow
+                variant="soft"
+                sx={{ bgcolor: "background.level1" }}
+              >
+                <Divider inset="context" />
+                <CardContent orientation="horizontal">
+                  <Typography
+                    level="body-xs"
+                    textColor="text.secondary"
+                    sx={{ fontWeight: "md" }}
+                  >
+                    {item.views}
+                  </Typography>
+                  <Divider orientation="vertical" />
+                  <Typography
+                    level="body-xs"
+                    textColor="text.secondary"
+                    sx={{ fontWeight: "md" }}
+                  >
+                    {item.time}
+                  </Typography>
+                </CardContent>
+              </CardOverflow>
+            </Card>
+          ))}
+        </Box>
+      </section>
+    </main>
   );
 }

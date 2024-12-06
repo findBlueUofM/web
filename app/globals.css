@@ -33,7 +33,8 @@ body {
   color: black;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -313,8 +314,8 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff; /* Set the background to white or your desired color */
-  z-index: 9999; /* Ensure it appears above other elements */
+  background-color: #ffffff;
+  z-index: 9999;
 }
 
 .loading-screen h1 {
@@ -324,5 +325,25 @@ body, html {
 }
 
 .MuiCircularProgress-root {
-  color: #3498db; /* Customize spinner color */
+  color: #3498db;
+}
+
+#networkbuildrepeat {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  flex: 1 1 calc(33.333% - 20px);
 }
