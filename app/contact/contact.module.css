@@ -1,0 +1,14 @@
+.contact-page {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.contact-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.contact-header h1 {
+  font-size: 5em;
+  font-weight: bold;
+  color: black; /* You can adjust the color */
+}
