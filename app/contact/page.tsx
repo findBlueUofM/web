@@ -52,7 +52,7 @@ export default function About() {
           title="DEV"
         ></BioCard>
         <BioCard
-          profilepic={"../images/michlogo.png"}
+          profilepic={"/Team Photos/Rakesh.png"}
           name="Rakesh Kottapali"
           desc="Hi, I'm Rakesh Kottapali, and I love to code!"
           title="DEV"
