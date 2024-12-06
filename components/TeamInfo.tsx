@@ -10,7 +10,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import CardActions from "@mui/joy/CardActions";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
-import SvgIcon from "@mui/joy/SvgIcon";
+import SchoolIcon from '@mui/icons-material/School';
 import { LinkedIn } from "@mui/icons-material";
 
 interface TeamMemberInfo {
@@ -43,8 +43,9 @@ export default function BioCard({
             borderColor: "background.surface",
           }}
         >
-          {title}
+         {title}
         </Chip>
+        <Typography level="title-sm"><SchoolIcon /> </Typography>
         <Typography level="title-lg">{name}</Typography>
         <Typography level="body-sm" sx={{ maxWidth: "24ch" }}>
           {desc}

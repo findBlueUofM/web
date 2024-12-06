@@ -46,10 +46,11 @@ export default function About() {
           linkedin="https://www.linkedin.com/in/owen-lennon-185824185/"
         ></BioCard>
         <BioCard
-          profilepic={"../images/michlogo.png"}
+          profilepic={"https://media.licdn.com/dms/image/v2/D5603AQHcJb2ghY008w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728266966942?e=1738800000&v=beta&t=hwMOZCSkOjaQxDTuen8qJOSOBJCqef1ioRS2VMhvIec"}
           name="Connor Woods"
           desc="Hi, I'm Connor Woods, and I love to code!"
           title="DEV"
+          linkedin="https://www.linkedin.com/in/connor-woods-michigan"
         ></BioCard>
         <BioCard
           profilepic={"/Team Photos/Rakesh.png"}
@@ -68,7 +69,7 @@ export default function About() {
           linkedin="https://www.linkedin.com/in/alimothana/"
         ></BioCard>
         <BioCard
-          profilepic={"../images/michlogo.png"}
+          profilepic={"https://media.licdn.com/dms/image/v2/D4E03AQGZ0dx6mzt5-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710732771610?e=2147483647&v=beta&t=lMPBj0ch3QtIo6ZRyXo_uon2azZ8zbg3Dhfc8vWMflE"}
           name="David Nguyen"
           desc="Hi, I'm David Nguyen, and I love to code!"
           title="DEV"
